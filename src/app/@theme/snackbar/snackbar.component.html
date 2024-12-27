@@ -1,0 +1,57 @@
+<div class="snackbar-wrapper">
+  @for (snackbar of activeSnackbars(); track snackbar.id) {
+    <div
+      [class]="getContainerClasses(snackbar.config)"
+      [style.animation-duration.ms]="snackbar.config.animationDuration"
+      [style.--custom-color]="snackbar.config.customColor"
+      [style.width]="snackbar.config.width"
+      [dir]="snackbar.config.rtl ? 'rtl' : 'ltr'"
+      (click)="handleClick(snackbar)"
+      (mouseenter)="handleMouseEnter(snackbar)"
+      (mouseleave)="handleMouseLeave(snackbar)"
+      [@snackbarAnimation]="snackbar.config.animation">
+
+      @if (snackbar.config.showIcon) {
+        <div class="snackbar-icon" [class]="getIconClass(snackbar.config)">
+          @if (snackbar.config.customIcon) {
+            <i [class]="snackbar.config.customIcon"></i>
+          } @else {
+            <i [class]="getDefaultIcon(snackbar.config)"></i>
+          }
+        </div>
+      }
+
+      <div class="snackbar-content">
+        @if (snackbar.config.title) {
+          <div class="snackbar-title">{{ snackbar.config.title }}</div>
+        }
+        <div class="snackbar-message">{{ snackbar.config.message }}</div>
+      </div>
+
+      @if (snackbar.config.action) {
+        <button
+          class="snackbar-action"
+          (click)="handleAction(snackbar)">
+          {{ snackbar.config.action.text }}
+        </button>
+      }
+
+      @if (snackbar.config.dismissible) {
+        <button
+          class="snackbar-close"
+          (click)="close(snackbar.id)">
+          ×
+        </button>
+      }
+
+      @if (snackbar.config.showProgress) {
+        <div class="snackbar-progress">
+          <div
+            class="progress-bar"
+            [style.animation-duration.ms]="snackbar.config.duration">
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

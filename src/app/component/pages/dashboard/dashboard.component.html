@@ -1,0 +1,169 @@
+<div class="container-fluid">
+
+  <div class="row mb-4">
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card stats-card primary h-100 py-2">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="text-xs text-uppercase mb-1 text-secondary">Today's Appointments</div>
+              <div class="h5 mb-0 font-weight-bold">18</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-calendar-check fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card stats-card success h-100 py-2">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="text-xs text-uppercase mb-1 text-secondary">Total Patients</div>
+              <div class="h5 mb-0 font-weight-bold">492</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-users fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card stats-card info h-100 py-2">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="text-xs text-uppercase mb-1 text-secondary">Available Slots</div>
+              <div class="h5 mb-0 font-weight-bold">7</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-clock fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card stats-card warning h-100 py-2">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="text-xs text-uppercase mb-1 text-secondary">Revenue</div>
+              <div class="h5 mb-0 font-weight-bold">$4,924</div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">Upcoming Appointments</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <div class="card appointment-card shadow-sm">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/user.jpg" alt="Patient" class="profile-img me-3">
+                    <div>
+                      <h6 class="mb-0">Sarah Johnson</h6>
+                      <small class="text-muted">General Checkup</small>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <i class="far fa-clock me-2"></i>
+                      09:00 AM
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+              <div class="card appointment-card shadow-sm">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="assets/img/user.jpg" alt="Patient" class="profile-img me-3">
+                    <div>
+                      <h6 class="mb-0">Michael Brown</h6>
+                      <small class="text-muted">Follow-up</small>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                      <i class="far fa-clock me-2"></i>
+                      10:30 AM
+                    </div>
+                    <button class="btn btn-sm btn-outline-primary">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-white">
+          <h5 class="mb-0">Recent Activity</h5>
+        </div>
+        <div class="card-body">
+          <div class="list-group list-group-flush">
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="mb-1">Prescription Updated</h6>
+                <small class="text-muted">Updated prescription for Emily Wilson</small>
+              </div>
+              <small class="text-muted">2 mins ago</small>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="mb-1">New Appointment</h6>
+                <small class="text-muted">James Anderson scheduled for tomorrow</small>
+              </div>
+              <small class="text-muted">1 hour ago</small>
+            </div>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="mb-1">Patient Report</h6>
+                <small class="text-muted">Lab results received for David Clark</small>
+              </div>
+              <small class="text-muted">3 hours ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: block;">
+  <canvas baseChart width="800" height="400"
+          [type]="'line'"
+          [data]="lineChartData"
+          [options]="lineChartOptions"
+          [legend]="lineChartLegend">
+  </canvas>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="sidebar" [class.expanded]="isExpanded">
+  <nav class="nav-menu">
+    <ul class="nav-links">
+      @for(item of menuItems; track item) {
+        <li>
+          <a [routerLink]="item.path"
+             routerLinkActive="active"
+             class="nav-link">
+            <i class="bi {{item.icon}}"></i>
+            @if (isExpanded) {
+              <span class="link-text">{{item.label}}</span>
+            }
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</div>
+

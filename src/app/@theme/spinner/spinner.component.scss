@@ -1,0 +1,130 @@
+.medical-spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.medical-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.medical-spinner {
+  position: relative;
+  width: var(--spinner-size, 120px);
+  height: var(--spinner-size, 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medical-spinner-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  animation: medical-rotate 2s linear infinite;
+}
+
+.medical-spinner-track {
+  fill: none;
+  stroke: rgba(74, 144, 226, 0.1);
+  stroke-width: 10;
+}
+
+.medical-spinner-circle {
+  fill: none;
+  stroke: url(#medicalGradient);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 280;
+  transform-origin: 50% 50%;
+  animation: medical-dash 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.medical-spinner-pulse {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background: linear-gradient(135deg, #4a90e2, #2ac6b5);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
+  animation: medical-pulse 1.2s ease-in-out infinite;
+}
+
+.medical-spinner-text {
+  color: var(--text-color, #2ac6b5);
+  font-size: var(--text-size, 1.1rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+  .medical-spinner-overlay {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .medical-spinner-container {
+    gap: 1rem;
+  }
+
+  .medical-spinner-text {
+    font-size: var(--text-size, 0.9rem);
+    letter-spacing: 0.3px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .medical-spinner-container {
+    gap: 0.75rem;
+  }
+
+  .medical-spinner-text {
+    font-size: var(--text-size, 0.8rem);
+    letter-spacing: 0.2px;
+  }
+}
+
+/* Animations */
+@keyframes medical-rotate {
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes medical-dash {
+  0% {
+    stroke-dashoffset: 280;
+  }
+  50% {
+    stroke-dashoffset: 75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(450deg);
+  }
+}
+
+@keyframes medical-pulse {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

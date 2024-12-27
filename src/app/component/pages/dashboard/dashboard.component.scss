@@ -1,0 +1,25 @@
+
+.stats-card {
+  border-left: 4px solid;
+  border-radius: 0.35rem;
+}
+
+.stats-card.primary { border-color: #4e73df; }
+.stats-card.success { border-color:  #1cc88a; }
+.stats-card.info { border-color: #36b9cc; }
+.stats-card.warning { border-color: #f6c23e; }
+
+.appointment-card {
+  transition: transform 0.2s;
+}
+
+.appointment-card:hover {
+  transform: translateY(-3px);
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

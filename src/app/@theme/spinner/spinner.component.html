@@ -1,0 +1,28 @@
+@if (isLoading) {
+  <div
+    class="medical-spinner-overlay"
+    @fadeInOut
+    [style.--spinner-size.px]="responsiveSize"
+    [style.--text-size.rem]="textSize"
+    [style.--text-color]="textColor"
+  >
+    <div class="medical-spinner-container">
+      <div class="medical-spinner">
+        <svg class="medical-spinner-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="medicalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#2ac6b5;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle class="medical-spinner-track" cx="50" cy="50" r="45" />
+          <circle class="medical-spinner-circle" cx="50" cy="50" r="45" />
+        </svg>
+        <div class="medical-spinner-pulse"></div>
+      </div>
+      <div *ngIf="text" class="medical-spinner-text">
+        {{ text | titlecase}}
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,230 @@
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Custom shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  position: fixed; // Change to fixed
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #374151;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4e73df; /* Primary color */
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.logo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #4e73df, #224abe);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: #1cc88a; /* Secondary accent color for "Point" */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+.profile-container {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.profile-role {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  margin-top: 64px; // Add this to account for fixed header
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  background: #f9fafb;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  margin-left: 70px; // Default margin for collapsed sidebar
+
+  &.expanded {
+    margin-left: 250px; // Expanded margin when sidebar is expanded
+  }
+}
+
+/* In your main layout CSS */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #fff;
+  border-top: 1px solid #dee2e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Custom shadow */
+  z-index: 999;
+}
+
+.footer-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Custom shadow */
+  align-items: center;
+}
+
+/* Make sure main content doesn't get hidden behind footer */
+.content-wrapper {
+  margin-bottom: 50px; /* Should match footer height */
+}
+
+/* Footer Styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 999;
+}
+
+.footer-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.dropdown-content a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+

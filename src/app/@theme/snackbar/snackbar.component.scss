@@ -1,0 +1,99 @@
+:host {
+  position: fixed;
+  z-index: 1000;
+}
+
+.snackbar-container {
+  padding: 16px;
+  border-radius: 4px;
+  margin: 8px;
+  min-width: 250px;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.snackbar-content {
+  color: white;
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+.snackbar-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+/* Icon styles */
+.snackbar-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon-success {
+  color: #48BB78;
+}
+
+.icon-error {
+  color: #F56565;
+}
+
+.icon-warning {
+  color: #F6AD55;
+}
+
+.icon-info {
+  color: #4299E1;
+}
+
+.icon-custom {
+  color: var(--custom-color, #4299E1);
+}
+
+/* Make icons slightly larger and add transition */
+.snackbar-icon i {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+/* Optional: Add hover effect */
+.snackbar-container:hover .snackbar-icon i {
+  transform: scale(1.1);
+}
+
+/* Position classes */
+.top-left { top: 0; left: 0; }
+.top-right { top: 0; right: 0; }
+.bottom-left { bottom: 0; left: 0; }
+.bottom-right { bottom: 0; right: 0; }
+.top-center { top: 0; left: 50%; transform: translateX(-50%); }
+.bottom-center { bottom: 0; left: 50%; transform: translateX(-50%); }
+
+/* Type classes */
+.type-success { background-color: #4caf50; }
+.type-error { background-color: #f44336; }
+.type-warning { background-color: #ff9800; }
+.type-info { background-color: #2196f3; }
+
+/* Animations */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0% { transform: scale(0.3); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

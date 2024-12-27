@@ -1,0 +1,46 @@
+<div class="layout-container">
+  <div class="loading-bar"></div>
+  <header class="header">
+    <div class="header-left">
+      <button class="toggle-btn" (click)="toggleSidebar()">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <div class="logo-text">
+          Care<span>Sync</span>
+        </div>
+      </div>
+    </div>
+    <div class="profile-container" (mouseover)="showDropdown = true" (mouseleave)="showDropdown = false">
+      <img src="assets/img/user.jpg" alt="Profile" class="profile-img">
+      <div class="profile-info">
+        <span class="profile-name">{{ userFullName }}</span>
+        <span class="profile-role">{{ roleTitle }}</span>
+      </div>
+
+      <div class="dropdown" *ngIf="showDropdown">
+        <div class="dropdown-content">
+          <a (click)="viewProfile()" class="bi bi-view-list"> View Profile</a>
+          <a (click)="logout()" class="bi bi-box-arrow-right"> Logout</a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="content-wrapper">
+    <app-sidebar></app-sidebar>
+    <main class="main-content" [class.expanded]="isExpanded">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <app-footer></app-footer>
+    </div>
+  </footer>
+</div>
